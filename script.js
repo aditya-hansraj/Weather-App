@@ -54,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
             case 'Haze':
                 weatherIcon.src = "imgs/haze.png";
                 break;
+            case 'Smoke':
+                weatherIcon.src = "imgs/smoke.png";
+                break;
             default:
                 weatherIcon.src = "";
         }
