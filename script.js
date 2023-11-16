@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Your existing JavaScript code here
 
     const apiKey = "30a59e5e306b687598b92cacd75cc380";
     const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log(data);
         document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+        printTemp(Math.round(data.main.temp));
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
 
@@ -62,16 +61,44 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // searchForm.addEventListener("submit", () => {
-    //     var city = searchForm.querySelector('input').value;
-    //     checkWeather(city);
-    // })
-    searchForm.addEventListener("submit", async (event) => {
-       // event.preventDefault(); // Prevent the default form submission behavior
+    function printTemp(temp){
+        document.querySelector(".temp .primary").innerHTML = temp;
+        document.querySelector("#pri").innerHTML = "°C";
+        document.querySelector("#sec").innerHTML = "F";
+        c = true;
+    }
 
+    searchForm.addEventListener("submit", async (event) => {
         var city = searchForm.querySelector('input').value.trim();
         await checkWeather(city);
     });
+
+    var c= true;
+
+    document.querySelector("#switch").addEventListener("click", () => {
+        var temp = document.querySelector(".primary").innerHTML;
+        if(c){
+            document.querySelector(".temp .primary").innerText = toFahrenheit(temp);
+            document.querySelector("#pri").innerText = "F";
+            document.querySelector("#sec").innerText = "°C";
+            c = !c;
+        }  
+        else{
+            document.querySelector(".temp .primary").innerText = toCelsius(temp);
+            document.querySelector("#pri").innerHTML = "°C";
+            document.querySelector("#sec").innerHTML = "F";
+            c = !c;
+        }
+        document.querySelector(".temp .primary").innerHTML = newTemp;
+    });
+
+    function toFahrenheit(celsius) {
+        return Math.round((celsius * 9/5) + 32);
+    }
+
+      function toCelsius(fahrenheit) {
+        return Math.round((fahrenheit - 32) * 5/9);
+    }
 
 
 });
