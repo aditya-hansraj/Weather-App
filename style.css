@@ -24,6 +24,15 @@ body{
     .card{
         padding: 3em 1em 5em 1em;
     }
+    *{
+        font-size: 90%;
+    }
+    .details{
+        font-size: 120%;
+    }
+    .col i{
+        font-size: 70%;
+    }
 }
 
 .search{
@@ -49,7 +58,7 @@ body{
 .search input{
     width: 75%;
     border: 0;
-    outline: none;
+    outline: 0;
     background: #ebfffc;
     color: #555;
     padding: 1em;
@@ -90,6 +99,7 @@ body{
 }
 
 #switch{
+    /* color: white; */
     margin: 0;
     padding: 0;
     background-color: transparent;
@@ -126,6 +136,9 @@ body{
     display: flex;
     align-items: center;
 }
+.col p{
+    font-size: 1.5em;
+}
 
 .col i{
     font-size: 3em;
@@ -143,7 +156,7 @@ body{
 }
 
 .city, .temp, .humidity, .wind {
-    animation: loadingAnimation 1.5s;
+    animation: loadingAnimation 1.5s; 
 }
 
 .weather{
