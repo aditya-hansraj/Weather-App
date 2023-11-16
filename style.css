@@ -22,7 +22,7 @@ body{
 
 @media only screen and (max-width: 500px){
     .card{
-        padding: 3em 1.8em 5em 1.8em;
+        padding: 3em 2em 5em 1.8em;
     }
     *{
         font-size: 90%;
