@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     searchForm.addEventListener("submit", async (event) => {
        // event.preventDefault(); // Prevent the default form submission behavior
 
-        var city = searchForm.querySelector('input').value;
+        var city = searchForm.querySelector('input').value.trim();
         await checkWeather(city);
     });
 
