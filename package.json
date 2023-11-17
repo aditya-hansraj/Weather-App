@@ -1,6 +1,6 @@
 {
   "name": "weather-app",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Fills you in about Weather conditions of any place in the world",
   "main": "script.js",
   "scripts": {
