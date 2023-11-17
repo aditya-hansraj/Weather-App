@@ -30,31 +30,41 @@ document.addEventListener('DOMContentLoaded', function () {
         printTemp(Math.round(data.main.temp));
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+        
+        var title_icon = document.getElementById("title-icon");
 
         switch(data.weather[0].main){
             case 'Clouds':
                 weatherIcon.src = "imgs/cloudy.png";
+                weatherIcon.src = "imgs/cloudy.png";
                 break;
             case 'Clear':
                 weatherIcon.src = "imgs/clear.png";
+                title_icon.href = "imgs/clear.png";
                 break;
             case 'Rain':
                 weatherIcon.src = "imgs/rain.png";
+                title_icon.href = "imgs/rain.png";
                 break;
             case 'Drizzle':
                 weatherIcon.src = "imgs/drizzle.png";
+                title_icon.href = "imgs/drizzle.png";
                 break;
             case 'Mist':
                 weatherIcon.src = "imgs/mist.png";
+                title_icon.href = "imgs/mist.png";
                 break;
             case 'Snowy':
                 weatherIcon.src = "imgs/snowy.png";
+                title_icon.href = "imgs/snowy.png";
                 break;
             case 'Haze':
                 weatherIcon.src = "imgs/haze.png";
+                title_icon.href = "imgs/haze.png";
                 break;
             case 'Smoke':
                 weatherIcon.src = "imgs/smoke.png";
+                title_icon.href = "imgs/smoke.png";
                 break;
             default:
                 weatherIcon.src = "";
