@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector("#sec").innerHTML = "F";
             c = !c;
         }
-        document.querySelector(".temp .primary").innerHTML = newTemp;
     });
 
     function toFahrenheit(celsius) {
