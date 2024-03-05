@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
             weather.style.height = "0";
         }
         else{
-            document.title = "Weather-"+city[0].toUpperCase() + city.slice(1);
             weather.style.height = "max-content";
             err.style.height = "0";
         }
@@ -28,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log(data);
         document.querySelector(".city").innerHTML = data.name;
+        document.title = data.name;
         printTemp(Math.round(data.main.temp));
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
