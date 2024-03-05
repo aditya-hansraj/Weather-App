@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             weather.style.height = "0";
         }
         else{
+            city = city[0].toUpperCase() + city.slice(1));
             document.title = "Weather-"+city;
             weather.style.height = "max-content";
             err.style.height = "0";
