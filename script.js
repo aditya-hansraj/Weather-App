@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log(data);
         document.querySelector(".city").innerHTML = data.name;
-        document.title = data.name;
+        document.title = "Weather-" + data.name;
         printTemp(Math.round(data.main.temp));
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
